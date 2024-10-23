@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @uniform %>
+
+<div>
+  <%= link_to "Edit this uniform", edit_uniform_path(@uniform) %> |
+  <%= link_to "Back to uniforms", uniforms_path %>
+
+  <%= button_to "Destroy this uniform", @uniform, method: :delete %>
+</div>

@@ -1,0 +1,2 @@
+class Uniform < ApplicationRecord
+end

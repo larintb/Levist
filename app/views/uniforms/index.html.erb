@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Uniforms" %>
+
+<h1>Uniforms</h1>
+
+<div id="uniforms">
+  <% @uniforms.each do |uniform| %>
+    <%= render uniform %>
+    <p>
+      <%= link_to "Show this uniform", uniform %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New uniform", new_uniform_path %>
