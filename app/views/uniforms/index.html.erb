@@ -1,16 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<div class="uniforms-container">
+  <h1>Uniform Inventory</h1>
 
-<% content_for :title, "Uniforms" %>
+  <div class="uniforms-list">
+    <% @uniforms.each do |uniform| %>
+      <div class="uniform-card">
+        <h2><%= uniform.collection %></h2>
+        <p><strong>Size:</strong> <%= uniform.size %></p>
+        <p><strong>Color:</strong> <%= uniform.color %></p>
+        <p><strong>Quantity:</strong> <%= uniform.quantity %></p>
+        <p><strong>Price:</strong> $<%= uniform.price %></p>
 
-<h1>Uniforms</h1>
+        <div class="actions">
+          <%= link_to 'Show', uniform, class: "btn btn-show" %>
+          <%= link_to 'Edit', edit_uniform_path(uniform), class: "btn btn-edit" %>
+          <%= link_to 'Destroy', uniform, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-delete" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 
-<div id="uniforms">
-  <% @uniforms.each do |uniform| %>
-    <%= render uniform %>
-    <p>
-      <%= link_to "Show this uniform", uniform %>
-    </p>
-  <% end %>
+  <%= link_to 'New Uniform', new_uniform_path, class: "btn btn-new" %>
 </div>
-
-<%= link_to "New uniform", new_uniform_path %>
